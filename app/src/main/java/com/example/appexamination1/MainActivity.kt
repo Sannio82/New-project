@@ -3,11 +3,15 @@ package com.example.appexamination1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var welcomeText : TextView
+    lateinit var palmTree : ImageView
+    lateinit var drink : ImageView
+    lateinit var formula : ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

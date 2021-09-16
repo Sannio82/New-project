@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">App Examination 1</string>
+    <string name="geography">Geografi</string>
+    <string name="science">Natur och vetenskap</string>
+    <string name="foodAndB">Mat och dryck</string>
+    <string name="mixed">Blandat</string>
 </resources>
