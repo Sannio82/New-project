@@ -4,4 +4,5 @@
     <string name="science">Natur och vetenskap</string>
     <string name="foodAndB">Mat och dryck</string>
     <string name="mixed">Blandat</string>
+    <string name="welcome">Välj kategori och lycka till!</string>
 </resources>
