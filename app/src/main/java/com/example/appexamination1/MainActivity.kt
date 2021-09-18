@@ -25,12 +25,12 @@ class MainActivity : AppCompatActivity() {
         val buttonGeography = findViewById<Button>(R.id.geography)
         buttonGeography.text = "Geografi"
         buttonGeography.setOnClickListener {
-            val intent = Intent(this, Geography::class.java)
+            val intent = Intent(this, GeographyActivity::class.java)
             startActivity(intent)
 
         }
 
-        val buttonScience = findViewById<Button>(R.id.science)
+      /*  val buttonScience = findViewById<Button>(R.id.science)
         buttonScience.text = "Natur och vetenskap"
         buttonScience.setOnClickListener {  }
 
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         val buttonMixed = findViewById<Button>(R.id.mixed)
         buttonMixed.text = "Blandat"
-        buttonMixed.setOnClickListener {  }
+        buttonMixed.setOnClickListener {  } */
 
 
     }

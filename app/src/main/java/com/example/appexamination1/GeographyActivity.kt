@@ -4,52 +4,46 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 
-class Geography : AppCompatActivity() {
+class GeographyActivity : AppCompatActivity() {
 
     lateinit var text: TextView
     //val listOfAnswers = mutableListOf<Answer>() Vet ej om denna kommer behövas
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_geography)
+        setContentView(R.layout.activity_geography2)
 
-            val listOfQuestions = mutableListOf<Question>()
-
-
-            val q1 = Question("Vad heter Nicaraguas huvudstad?", Answer("Managua", "San José",
-                "Tegucigalpa", "Buenos Aires") )
-            val q2 = Question("Vad heter Bolivias huvudstad?", Answer("Quito", "Sucre",
-                "Rio de Janeiro", "Lima") )
-
-            listOfQuestions.add(q1)
-            listOfQuestions.add(q2)
+        val listOfQuestions = mutableListOf<Question>()
 
 
-        val questions = listOf("q1", "q2")
-        val randomQuestion = questions.shuffled().first()
+        val q1 = Question("Vad heter Nicaraguas huvudstad?", Answer("Managua", "San José",
+            "Tegucigalpa", "Buenos Aires") )
+        val q2 = Question("Vad heter Bolivias huvudstad?", Answer("Quito", "Sucre",
+            "Rio de Janeiro", "Lima") )
+
+        listOfQuestions.add(q1)
+        listOfQuestions.add(q2)
+        //val randomQuestion = listOfQuestions.shuffled().first()
 
         text = findViewById<TextView>(R.id.question)
-        text.text = randomQuestion
-
-        showNewQuestion()
+        text.text = "Här ska frågan stå!" //Typ: randomQuestion.q
+        // showNewQuestion()
     }
 
-    val questions = listOf("q1", "q2")
-    val randomQuestion = questions.shuffled().first()
-    fun showNewQuestion() {
-        randomQuestion
-    }
+    //val questions = mutableListOf<Question>()
 
+    //val randomQuestion = mutableListOf<Question>().shuffled().first()
 
     //fun showNewQuestion() {
-        //listOfQuestions = (q1...q2).random()
-        //secondNumber= (1..100).random()
+    //  randomQuestion
+}
 
-        //randomNumbers.text = "$firstNumber + $secondNumber"
+//fun showNewQuestion() {
+//listOfQuestions = (q1...q2).random()
+//secondNumber= (1..100).random()
 
-    }
+//randomNumbers.text = "$firstNumber + $secondNumber"
+
+//}
 
 
-class Question (val q : String, val listOfAnswer: Answer)
-
-class Answer (val option1: String, val option2: String, val option3: String, val option4: String)
