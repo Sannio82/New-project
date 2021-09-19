@@ -1,8 +1,15 @@
 package com.example.appexamination1
 
-    class Question(val q: String, val listOfOption: Option, val a: String)
+   data class Question(
+       val id: Int,
+       val q: String,
+       val option1 : String,
+       val option2: String,
+       val option3: String,
+       val option4: String,
+       val correctAnswer: Int)
 
-    class Option(val option1: String, val option2: String, val option3: String, val option4: String)
+   //data class Option(val id: Int, val option1: String, val option2: String, val option3: String, val option4: String)
 
 
 

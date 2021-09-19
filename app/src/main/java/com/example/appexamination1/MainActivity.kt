@@ -3,6 +3,7 @@ package com.example.appexamination1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -10,14 +11,12 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     lateinit var welcomeText : TextView
-    lateinit var palmTree : ImageView
-    lateinit var drink : ImageView
-    lateinit var formula : ImageView
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
 
         welcomeText = findViewById(R.id.welcomeText)
         welcomeText.text = "Välj kategori och lycka till!"
@@ -27,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         buttonGeography.setOnClickListener {
             val intent = Intent(this, GeographyActivity::class.java)
             startActivity(intent)
+            finish()
 
         }
 
