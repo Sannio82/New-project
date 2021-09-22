@@ -43,7 +43,7 @@
                 android:layout_weight="1"
                 android:indeterminate="false"
                 android:max="10"
-                android:minHeight="50dp"
+                android:minHeight="2dp"
                 android:progress="0"
                 android:progressDrawable="@android:drawable/bottom_bar"
                 android:progressTint="#C664D6" />
@@ -68,8 +68,8 @@
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
-            android:textColor="#7A8089"
-            android:textSize="18sp"
+            android:textColor="#FF000000"
+            android:textSize="20sp"
             tools:text="OptionOne" />
 
         <TextView
@@ -80,8 +80,8 @@
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
-            android:textColor="#7A8089"
-            android:textSize="18sp"
+            android:textColor="#FF000000"
+            android:textSize="20sp"
             tools:text="OptionTwo" />
 
 
@@ -93,8 +93,9 @@
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
-            android:textColor="#7A8089"
-            android:textSize="18sp"
+            android:textColor="#FF000000"
+            android:textSize="20sp"
+            android:textStyle="normal"
             tools:text="OptionThree" />
 
         <TextView
@@ -105,8 +106,8 @@
             android:background="@drawable/default_option_border_bg"
             android:gravity="center"
             android:padding="15dp"
-            android:textColor="#7A8089"
-            android:textSize="18sp"
+            android:textColor="#FF000000"
+            android:textSize="20sp"
             tools:text="OptionFour" />
 
         <Button

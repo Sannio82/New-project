@@ -5,9 +5,9 @@ import java.util.ArrayList
 
 object Constants {
 
-    fun getQuestions() : ArrayList<Question> {
+    fun getQuestions() : MutableList<Question> {
 
-        val questionsList= ArrayList<Question> ()
+        val questionsList= mutableListOf<Question>()
 
         val q1 = Question(
             1,
@@ -39,6 +39,7 @@ object Constants {
         questionsList.add(q1)
         questionsList.add(q2)
         questionsList.add(q3)
+
         return questionsList
 
 
