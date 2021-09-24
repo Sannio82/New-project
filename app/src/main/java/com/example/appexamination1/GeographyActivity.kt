@@ -1,6 +1,7 @@
 package com.example.appexamination1
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ import java.util.ArrayList
         private var mCurrentPosition: Int = 1
         private var mQuestionsList: MutableList<Question>? = null
         private var mSelectedOptionPosition: Int = 0
+        private var mCorrectAnswers: Int = 0
 
         //lateinit var text: TextView = ""
 
@@ -146,21 +148,24 @@ import java.util.ArrayList
                               setQuestion()
                           }
                           else -> {
-                              Toast.makeText(
-                                  this,
-                                  "You have finished the quiz!",
-                                  Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            startActivity(intent)
+                            finish()
                           }
                       }
-                  }else{
+                  }else {
                           val button = findViewById<Button>(R.id.btn_submit)
-                          val question : Question = mQuestionsList!![mCurrentPosition - 1]
+                          val question: Question = mQuestionsList!![mCurrentPosition - 1]
                           if (question.correctAnswer != mSelectedOptionPosition) {
                               answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                          } else {
+                              mCorrectAnswers++
                           }
                               answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
                               if (mCurrentPosition == mQuestionsList!!.size) {
-                                  button.text = "SLUT"
+                                  button.text = "GÅ TILL RESULTAT"
                               } else {
                                   button.text = "NÄSTA FRÅGA"
                               }
@@ -169,6 +174,7 @@ import java.util.ArrayList
 
                   }
               }
+
         }
 
         /*val option1 = findViewById<TextView>(R.id.option1)
