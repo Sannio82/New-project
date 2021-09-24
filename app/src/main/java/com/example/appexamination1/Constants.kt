@@ -8,11 +8,11 @@ object Constants {
         val TOTAL_QUESTIONS: String = "Totalt"
         val CORRECT_ANSWERS: String = "Correct answers"
 
-    fun getQuestions() : MutableList<Question> {
+    fun getQuestions() : MutableList<QuestionGeography> {
 
-        val questionsList= mutableListOf<Question>()
+        val questionsGeographyList= mutableListOf<QuestionGeography>()
 
-        val q1 = Question(
+        val q1 = QuestionGeography(
             1,
             "Vad heter Nicaraguas huvudstad?",
             "Managua",
@@ -21,7 +21,7 @@ object Constants {
             "Buenos aires",
             1)
 
-        val q2 = Question(
+        val q2 = QuestionGeography(
             2,
             "Vad heter Bolivias huvudstad?",
             "Rio de Janeiro",
@@ -30,7 +30,7 @@ object Constants {
             "Caracas",
             3)
 
-        val q3 = Question(
+        val q3 = QuestionGeography(
             3,
             "Vilken är Sveriges största sjö?",
             "Mälaren",
@@ -39,34 +39,15 @@ object Constants {
             "Hjälmaren",
         2)
 
-        questionsList.add(q1)
-        questionsList.add(q2)
-        questionsList.add(q3)
-        questionsList.add(Question(4, "Vad heter den största parken i Mexiko City?", "Parque Central",
+        questionsGeographyList.add(q1)
+        questionsGeographyList.add(q2)
+        questionsGeographyList.add(q3)
+        questionsGeographyList.add(QuestionGeography(4, "Vad heter den största parken i Mexiko City?", "Parque Central",
         "Chapultepec", "Plaza del sol", "Parque hundido", 2))
-        //questionsList.add(Question(, "", "",
+        //questionsList.add(QuestionGeography(, "", "",
           //  "", "", "", ))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return questionsList
+        return questionsGeographyList
 
 
 

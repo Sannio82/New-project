@@ -1,6 +1,6 @@
 package com.example.appexamination1
 
-   data class Question(
+   data class QuestionGeography(
        val id: Int,
        val q: String,
        val option1 : String,
@@ -9,7 +9,6 @@ package com.example.appexamination1
        val option4: String,
        val correctAnswer: Int)
 
-   //data class Option(val id: Int, val option1: String, val option2: String, val option3: String, val option4: String)
 
 
 

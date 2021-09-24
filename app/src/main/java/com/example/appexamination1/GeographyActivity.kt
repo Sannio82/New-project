@@ -19,7 +19,7 @@ import java.util.ArrayList
     class GeographyActivity : AppCompatActivity(), View.OnClickListener {
 
         private var mCurrentPosition: Int = 1
-        private var mQuestionsList: MutableList<Question>? = null
+        private var mQuestionsList = mutableListOf<QuestionGeography>()
         private var mSelectedOptionPosition: Int = 0
         private var mCorrectAnswers: Int = 0
 
@@ -52,7 +52,7 @@ import java.util.ArrayList
             val progressBar = findViewById<ProgressBar>(R.id.progressBar)
 
             val mCurrentPosition = 1
-            val question : Question = mQuestionsList!![mCurrentPosition -1]
+            val question : QuestionGeography = mQuestionsList[mCurrentPosition -1]
 
             progressBar.progress = mCurrentPosition
             tvProgress.text = "$mCurrentPosition" + "/" + progressBar.max
@@ -67,11 +67,11 @@ import java.util.ArrayList
         private fun setQuestion() {
 
             val button = findViewById<Button>(R.id.btn_submit)
-            val question : Question = mQuestionsList!![mCurrentPosition - 1]
+            val question : QuestionGeography = mQuestionsList[mCurrentPosition - 1]
 
             defaultOptionsView()
 
-            if (mCurrentPosition == mQuestionsList!!.size) {
+            if (mCurrentPosition == mQuestionsList.size) {
                 button.text = "SLUT"
             } else {
                 button.text = "SVARA "
@@ -157,14 +157,14 @@ import java.util.ArrayList
                       }
                   }else {
                           val button = findViewById<Button>(R.id.btn_submit)
-                          val question: Question = mQuestionsList!![mCurrentPosition - 1]
+                          val question: QuestionGeography = mQuestionsList[mCurrentPosition - 1]
                           if (question.correctAnswer != mSelectedOptionPosition) {
                               answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
                           } else {
                               mCorrectAnswers++
                           }
                               answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
-                              if (mCurrentPosition == mQuestionsList!!.size) {
+                              if (mCurrentPosition == mQuestionsList.size) {
                                   button.text = "GÅ TILL RESULTAT"
                               } else {
                                   button.text = "NÄSTA FRÅGA"
@@ -251,7 +251,6 @@ import java.util.ArrayList
 //listOfQuestions = (q1...q2).random()
 //secondNumber= (1..100).random()
 
-//randomNumbers.text = "$firstNumber + $secondNumber"
 
 //}
 
