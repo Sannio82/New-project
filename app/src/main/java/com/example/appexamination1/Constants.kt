@@ -5,6 +5,9 @@ import java.util.ArrayList
 
 object Constants {
 
+        val TOTAL_QUESTIONS: String = "Totalt"
+        val CORRECT_ANSWERS: String = "Correct answers"
+
     fun getQuestions() : MutableList<Question> {
 
         val questionsList= mutableListOf<Question>()
@@ -39,6 +42,29 @@ object Constants {
         questionsList.add(q1)
         questionsList.add(q2)
         questionsList.add(q3)
+        questionsList.add(Question(4, "Vad heter den största parken i Mexiko City?", "Parque Central",
+        "Chapultepec", "Plaza del sol", "Parque hundido", 2))
+        //questionsList.add(Question(, "", "",
+          //  "", "", "", ))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         return questionsList
 

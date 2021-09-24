@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)lsgit stgit 
+        setContentView(R.layout.activity_main)
 
         //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
 
@@ -26,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         buttonGeography.text = "Geografi"
         buttonGeography.setOnClickListener {
             val intent = Intent(this, GeographyActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        val buttonScience = findViewById<Button>(R.id.science)
+        buttonScience.setOnClickListener {
+            val intent = Intent(this, ScienceActivity::class.java)
             startActivity(intent)
             finish()
 
