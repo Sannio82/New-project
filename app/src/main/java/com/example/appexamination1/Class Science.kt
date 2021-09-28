@@ -1,6 +1,11 @@
 package com.example.appexamination1
 
-    class QuestionScience(
+import android.graphics.Color
+import android.graphics.Typeface
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+
+class QuestionScience(
     val id: Int,
     val q: String,
     val option1 : String,

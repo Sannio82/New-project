@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppExamination1">
         <activity
+            android:name=".ScienceActivity2"
+            android:exported="true" />
+        <activity
             android:name=".ScienceActivity"
             android:exported="true" />
         <activity

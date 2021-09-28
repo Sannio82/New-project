@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
         val buttonScience = findViewById<Button>(R.id.science)
         buttonScience.setOnClickListener {
-            val intent = Intent(this, ScienceActivity::class.java)
+            val intent = Intent(this, ScienceActivity2::class.java)
             startActivity(intent)
             finish()
 

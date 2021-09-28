@@ -8,6 +8,7 @@ object Constants {
         val TOTAL_QUESTIONS: String = "Totalt"
         val CORRECT_ANSWERS: String = "Correct answers"
 
+
     fun getQuestions() : MutableList<QuestionGeography> {
 
         val questionsGeographyList= mutableListOf<QuestionGeography>()
@@ -48,12 +49,48 @@ object Constants {
           //  "", "", "", ))
 
         return questionsGeographyList
+    }
+    fun getQuestionsScience() : MutableList<QuestionScience> {
 
+        val questionsScienceList= mutableListOf<QuestionScience>()
 
+        val qS1 = QuestionScience(
+            1,
+            "Hur många ungar föder normalt en utter?",
+            "1-2",
+            "2-3",
+            "3-4",
+            "4-5",
+            1)
 
+        val qS2 = QuestionScience(
+            2,
+            "Hur många väteatomer innehåller en vattenmolekyl?",
+            "1",
+            "2",
+            "3",
+            "4",
+            2)
 
+        val qS3 = QuestionScience(
+            3,
+            "Vad har järn för beteckning i det periodiska systemet?",
+            "Io",
+            "J",
+            "Fe",
+            "Ir",
+            3)
 
+        questionsScienceList.add(qS1)
+        questionsScienceList.add(qS2)
+        questionsScienceList.add(qS3)
+        questionsScienceList.add(QuestionScience(4, "Vad heter sälens barn", "Kid",
+            "Kut", "Kalv", "Unge", 2))
+        //questionsList.add(QuestionGeography(, "", "",
+        //  "", "", "", ))
 
+        return questionsScienceList
 
     }
+
 }

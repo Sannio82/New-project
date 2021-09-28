@@ -38,15 +38,12 @@
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="@android:style/Widget.ProgressBar.Horizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="320dp"
+                android:layout_height="2dp"
+                android:scaleY="4"
                 android:indeterminate="false"
-                android:max="10"
-                android:minHeight="2dp"
-                android:progress="0"
-                android:progressDrawable="@android:drawable/bottom_bar"
-                android:progressTint="#C664D6" />
+                android:indeterminateDrawable="@color/purple_200"
+ />
 
             <TextView
                 android:id="@+id/tvProgress"
