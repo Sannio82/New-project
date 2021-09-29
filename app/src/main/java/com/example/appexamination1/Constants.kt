@@ -9,8 +9,8 @@ object Constants {
         val CORRECT_ANSWERS: String = "Correct answers"
 
 
-    fun getQuestions() : MutableList<QuestionGeography> {
 
+    fun getQuestions(): MutableList<QuestionGeography> {
         val questionsGeographyList= mutableListOf<QuestionGeography>()
 
         val q1 = QuestionGeography(
@@ -45,10 +45,8 @@ object Constants {
         questionsGeographyList.add(q3)
         questionsGeographyList.add(QuestionGeography(4, "Vad heter den största parken i Mexiko City?", "Parque Central",
         "Chapultepec", "Plaza del sol", "Parque hundido", 2))
-        //questionsList.add(QuestionGeography(, "", "",
-          //  "", "", "", ))
 
-        return questionsGeographyList
+       return questionsGeographyList
     }
     fun getQuestionsScience() : MutableList<QuestionScience> {
 
@@ -86,11 +84,20 @@ object Constants {
         questionsScienceList.add(qS3)
         questionsScienceList.add(QuestionScience(4, "Vad heter sälens barn", "Kid",
             "Kut", "Kalv", "Unge", 2))
-        //questionsList.add(QuestionGeography(, "", "",
-        //  "", "", "", ))
+
 
         return questionsScienceList
 
     }
+
+  /*  fun initializeWords() {
+        val word = Word("Hello", "Hej")
+        wordList.add(word)
+        wordList.add(Word("No", "Nej"))
+        wordList.add(Word("Orange", "Apelsin"))
+        wordList.add(Word("Computer", "Dator"))
+        wordList.add(Word("Tree", "Träd"))
+        wordList.add(Word("Drawer", "Byrå"))
+    } */
 
 }

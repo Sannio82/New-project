@@ -23,20 +23,20 @@ class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
     private var mQuestionsList = mutableListOf<QuestionScience>()
     private var mSelectedOptionPosition: Int = 0
     private var mCorrectAnswers: Int = 0
-    /*lateinit var option1 : TextView
+    lateinit var option1 : TextView
     lateinit var option2 : TextView
     lateinit var option3 : TextView
-    lateinit var option4 : TextView */
+    lateinit var option4 : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_geography2)
 
 
-        val option1 = findViewById<TextView>(R.id.option1)
-        val option2 = findViewById<TextView>(R.id.option2)
-        val option3 = findViewById<TextView>(R.id.option3)
-        val option4 = findViewById<TextView>(R.id.option4)
+        option1 = findViewById<TextView>(R.id.option1)
+        option2 = findViewById<TextView>(R.id.option2)
+        option3 = findViewById<TextView>(R.id.option3)
+        option4 = findViewById<TextView>(R.id.option4)
 
         val questionTextView = findViewById<TextView>(R.id.questionTextView)
 
@@ -75,21 +75,9 @@ class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
 
     private fun setQuestion() {
 
-        val button = findViewById<Button>(R.id.btn_submit)
         val question : QuestionScience = mQuestionsList[mCurrentPosition - 1]
 
         defaultOptionsView()
-
-        if (mCurrentPosition == mQuestionsList.size) {
-            button.text = "FORTSÄTT"
-        } else {
-            button.text = "SVARA "
-        }
-
-        val option1 = findViewById<TextView>(R.id.option1)
-        val option2 = findViewById<TextView>(R.id.option2)
-        val option3 = findViewById<TextView>(R.id.option3)
-        val option4 = findViewById<TextView>(R.id.option4)
 
         val tvProgress = findViewById<TextView>(R.id.tvProgress)
         val progressBar = findViewById<ProgressBar>(R.id.progressBar)
@@ -107,11 +95,6 @@ class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
 
     private fun defaultOptionsView() {
 
-        val option1 = findViewById<TextView>(R.id.option1)
-        val option2 = findViewById<TextView>(R.id.option2)
-        val option3 = findViewById<TextView>(R.id.option3)
-        val option4 = findViewById<TextView>(R.id.option4)
-
         val options = mutableListOf<TextView>()
         options.add(0, option1)
         options.add(1, option2)
@@ -128,24 +111,23 @@ class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-        val option1 = findViewById<TextView>(R.id.option1)
-        val option2 = findViewById<TextView>(R.id.option2)
-        val option3 = findViewById<TextView>(R.id.option3)
-        val option4 = findViewById<TextView>(R.id.option4)
-
         when(v?.id) {
 
             R.id.option1 -> {
                 selectedOptionView(option1, 1)
+                backgroundcolor()
             }
             R.id.option2 -> {
                 selectedOptionView(option2, 2)
+                backgroundcolor()
             }
             R.id.option3 -> {
                 selectedOptionView(option3, 3)
+                backgroundcolor()
             }
             R.id.option4 -> {
                 selectedOptionView(option4, 4)
+                backgroundcolor()
             }
             R.id.btn_submit -> {
                 if (mSelectedOptionPosition == 0) {
@@ -156,28 +138,9 @@ class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
                             setQuestion()
                         }
                         else -> {
-                            val intent = Intent(this, ResultActivity::class.java)
-                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
-                            startActivity(intent)
-                            finish()
+                            goToResult()
                         }
                     }
-                }else {
-                    val button = findViewById<Button>(R.id.btn_submit)
-                    val question: QuestionScience = mQuestionsList[mCurrentPosition - 1]
-                    if (question.correctAnswer != mSelectedOptionPosition) {
-                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
-                    } else {
-                        mCorrectAnswers++
-                    }
-                    answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
-                    if (mCurrentPosition == mQuestionsList.size) {
-                        button.text = "GÅ TILL RESULTAT"
-                    } else {
-                        button.text = "NÄSTA FRÅGA"
-                    }
-                    mSelectedOptionPosition = 0
                 }
 
             }
@@ -185,17 +148,7 @@ class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    /*val option1 = findViewById<TextView>(R.id.option1)
-    val option2 = findViewById<TextView>(R.id.option2)
-    val option3 = findViewById<TextView>(R.id.option3)
-    val option4 = findViewById<TextView>(R.id.option4)*/
-
     private fun answerView(answer: Int, drawableView: Int) {
-        val option1 = findViewById<TextView>(R.id.option1)
-        val option2 = findViewById<TextView>(R.id.option2)
-        val option3 = findViewById<TextView>(R.id.option3)
-        val option4 = findViewById<TextView>(R.id.option4)
-
 
         when(answer) {
             1 ->{
@@ -225,31 +178,32 @@ class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
         textView.background = ContextCompat.getDrawable(
             this, R.drawable.selected_option_border_bg)
 
-
-
     }
 
+    fun backgroundcolor() {
+        val question: QuestionScience = mQuestionsList[mCurrentPosition - 1]
 
-    /* fun showNewQuestion() {
+        if (question.correctAnswer != mSelectedOptionPosition) {
+            answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+        } else {
+            mCorrectAnswers++
+            answerView(mSelectedOptionPosition, R.drawable.correct_option_border_bg)
+        }
+        mSelectedOptionPosition = 0
+    }
 
-        //val questionsList = Constants.getQuestions()
-        val randomQuestion = mQuestionsList!!.shuffled().first()
-        text = findViewById<TextView>(R.id.questionTextView)
-        text.text = randomQuestion.q */
-
-
+        fun goToResult() {
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+        intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+        startActivity(intent)
+        finish()
+    }
 }
 
 
 
 
-
-//val questions = mutableListOf<Question>()
-
-//val randomQuestion = mutableListOf<Question>().shuffled().first()
-
-//fun showNewQuestion() {
-//  randomQuestion
 
 
 

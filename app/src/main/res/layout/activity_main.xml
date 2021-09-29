@@ -40,21 +40,5 @@
         android:text="@string/science"
  />
 
-    <Button
-        android:id="@+id/mixed"
-        android:layout_width="238dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/mixed"
- />
-
-    <Button
-        android:id="@+id/foodBeverages"
-        android:layout_width="238dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/foodAndB"
- />
-
 
 </LinearLayout>
