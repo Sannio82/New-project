@@ -14,9 +14,3 @@ data class QuestionGeography(
        val option4: String,
        val correctAnswer: Int)
 
-
-
-
-
-
-

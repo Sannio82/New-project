@@ -5,8 +5,8 @@ import java.util.ArrayList
 
 object Constants {
 
-        val TOTAL_QUESTIONS: String = "Totalt"
-        val CORRECT_ANSWERS: String = "Correct answers"
+    val TOTAL_QUESTIONS: String = "Totalt"
+    val CORRECT_ANSWERS: String = "Correct answers"
 
 
 
@@ -38,15 +38,15 @@ object Constants {
             "Vänern",
             "Vättern",
             "Hjälmaren",
-        2)
+            2)
 
         questionsGeographyList.add(q1)
         questionsGeographyList.add(q2)
         questionsGeographyList.add(q3)
         questionsGeographyList.add(QuestionGeography(4, "Vad heter den största parken i Mexiko City?", "Parque Central",
-        "Chapultepec", "Plaza del sol", "Parque hundido", 2))
+            "Chapultepec", "Plaza del sol", "Parque hundido", 2))
 
-       return questionsGeographyList
+        return questionsGeographyList
     }
     fun getQuestionsScience() : MutableList<QuestionScience> {
 
@@ -89,15 +89,5 @@ object Constants {
         return questionsScienceList
 
     }
-
-  /*  fun initializeWords() {
-        val word = Word("Hello", "Hej")
-        wordList.add(word)
-        wordList.add(Word("No", "Nej"))
-        wordList.add(Word("Orange", "Apelsin"))
-        wordList.add(Word("Computer", "Dator"))
-        wordList.add(Word("Tree", "Träd"))
-        wordList.add(Word("Drawer", "Byrå"))
-    } */
 
 }
