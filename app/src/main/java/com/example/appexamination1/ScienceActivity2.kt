@@ -1,29 +1,32 @@
 package com.example.appexamination1
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import java.util.ArrayList
 
 
-class GeographyActivity : AppCompatActivity(), View.OnClickListener {
+class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
 
     private var mCurrentPosition: Int = 1
-    private var mQuestionsList = mutableListOf<QuestionGeography>()
+    private var mQuestionsList = mutableListOf<QuestionScience>()
     private var mSelectedOptionPosition: Int = 0
     private var mCorrectAnswers: Int = 0
-    lateinit var option1: TextView
-    lateinit var option2: TextView
-    lateinit var option3: TextView
-    lateinit var option4: TextView
+    lateinit var option1 : TextView
+    lateinit var option2 : TextView
+    lateinit var option3 : TextView
+    lateinit var option4 : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +40,7 @@ class GeographyActivity : AppCompatActivity(), View.OnClickListener {
 
         val questionTextView = findViewById<TextView>(R.id.questionTextView)
 
-        mQuestionsList = Constants.getQuestions()
+        mQuestionsList = Constants.getQuestionsScience()
 
         setQuestion()
 
@@ -54,7 +57,7 @@ class GeographyActivity : AppCompatActivity(), View.OnClickListener {
         progressBar.max = mQuestionsList.size
 
         val mCurrentPosition = 1
-        val question: QuestionGeography = mQuestionsList[mCurrentPosition - 1]
+        val question : QuestionScience = mQuestionsList[mCurrentPosition -1]
 
         progressBar.progress = mCurrentPosition
         tvProgress.text = "$mCurrentPosition" + "/" + progressBar.max
@@ -69,9 +72,10 @@ class GeographyActivity : AppCompatActivity(), View.OnClickListener {
         option3.text = question.option3
         option4.text = question.option4
     }
+
     private fun setQuestion() {
 
-        val question : QuestionGeography = mQuestionsList[mCurrentPosition - 1]
+        val question : QuestionScience = mQuestionsList[mCurrentPosition - 1]
 
         defaultOptionsView()
 
@@ -86,6 +90,7 @@ class GeographyActivity : AppCompatActivity(), View.OnClickListener {
         option2.text = question.option2
         option3.text = question.option3
         option4.text = question.option4
+
     }
 
     private fun defaultOptionsView() {
@@ -100,14 +105,13 @@ class GeographyActivity : AppCompatActivity(), View.OnClickListener {
             option.setTextColor(Color.parseColor("#FF000000"))
             option.typeface = Typeface.DEFAULT
             option.background = ContextCompat.getDrawable(
-                this, R.drawable.default_option_border_bg
-            )
+                this, R.drawable.default_option_border_bg)
         }
     }
 
     override fun onClick(v: View?) {
 
-        when (v?.id) {
+        when(v?.id) {
 
             R.id.option1 -> {
                 selectedOptionView(option1, 1)
@@ -138,32 +142,30 @@ class GeographyActivity : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                 }
+
             }
         }
+
     }
 
     private fun answerView(answer: Int, drawableView: Int) {
 
-        when (answer) {
-            1 -> {
+        when(answer) {
+            1 ->{
                 option1.background = ContextCompat.getDrawable(
-                    this, drawableView
-                )
+                    this, drawableView)
             }
-            2 -> {
+            2 ->{
                 option2.background = ContextCompat.getDrawable(
-                    this, drawableView
-                )
+                    this, drawableView)
             }
-            3 -> {
+            3 ->{
                 option3.background = ContextCompat.getDrawable(
-                    this, drawableView
-                )
+                    this, drawableView)
             }
-            4 -> {
+            4 ->{
                 option4.background = ContextCompat.getDrawable(
-                    this, drawableView
-                )
+                    this, drawableView)
             }
         }
     }
@@ -175,18 +177,11 @@ class GeographyActivity : AppCompatActivity(), View.OnClickListener {
         textView.setTypeface(textView.typeface, Typeface.BOLD)
         textView.background = ContextCompat.getDrawable(
             this, R.drawable.selected_option_border_bg)
-    }
 
-    fun goToResult() {
-        val intent = Intent(this, ResultActivity::class.java)
-        intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
-        intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
-        startActivity(intent)
-        finish()
     }
 
     fun backgroundcolor() {
-        val question: QuestionGeography = mQuestionsList[mCurrentPosition - 1]
+        val question: QuestionScience = mQuestionsList[mCurrentPosition - 1]
 
         if (question.correctAnswer != mSelectedOptionPosition) {
             answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
@@ -196,10 +191,21 @@ class GeographyActivity : AppCompatActivity(), View.OnClickListener {
         }
         mSelectedOptionPosition = 0
     }
+
+        fun goToResult() {
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+        intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+        startActivity(intent)
+        finish()
+    }
 }
 
 
-    
+
+
+
+
 
 
 

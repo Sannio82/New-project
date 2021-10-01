@@ -10,9 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppExamination1">
         <activity
-            android:name=".ResultActivity"
-            android:screenOrientation="portrait"
+            android:name=".ScienceActivity2"
             android:exported="true" />
+        <activity
+            android:name=".ScienceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ResultActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".GeographyActivity"
             android:exported="true" />

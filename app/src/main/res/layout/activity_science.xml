@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="#009688"
-    tools:context=".GeographyActivity">
+    tools:context="ScienceActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/questionTextView"
+            android:id="@+id/questionScienceTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -27,7 +27,7 @@
             android:textSize="22sp" />
 
         <LinearLayout
-            android:id="@+id/ll_progress_details"
+            android:id="@+id/ll_progress2_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -36,17 +36,20 @@
             android:orientation="horizontal">
 
             <ProgressBar
-                android:id="@+id/progressBar"
+                android:id="@+id/progressBar2"
                 style="@android:style/Widget.ProgressBar.Horizontal"
-                android:layout_width="320dp"
-                android:layout_height="2dp"
-                android:scaleY="4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:indeterminate="false"
-                android:indeterminateDrawable="@color/purple_200"
- />
+                android:max="10"
+                android:minHeight="2dp"
+                android:progress="0"
+                android:progressDrawable="@android:drawable/bottom_bar"
+                android:progressTint="#C664D6" />
 
             <TextView
-                android:id="@+id/tvProgress"
+                android:id="@+id/tvProgress2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -58,7 +61,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/option1"
+            android:id="@+id/optionScience1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -70,7 +73,7 @@
             tools:text="OptionOne" />
 
         <TextView
-            android:id="@+id/option2"
+            android:id="@+id/optionScience2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -83,7 +86,7 @@
 
 
         <TextView
-            android:id="@+id/option3"
+            android:id="@+id/optionScience3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -96,7 +99,7 @@
             tools:text="OptionThree" />
 
         <TextView
-            android:id="@+id/option4"
+            android:id="@+id/optionScience4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -108,7 +111,7 @@
             tools:text="OptionFour" />
 
         <Button
-            android:id="@+id/btn_submit"
+            android:id="@+id/btn_submit2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
