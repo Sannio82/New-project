@@ -42,11 +42,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/highScore"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        />
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp" />
     <Button
         android:id="@+id/clearHighscore"
         android:layout_width="wrap_content"

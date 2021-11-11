@@ -42,6 +42,7 @@ class ResultActivity : AppCompatActivity(), CoroutineScope {
         val totalQuestions = intent.getIntExtra(Constants.TOTAL_QUESTIONS, 0)
         val tvScore = findViewById<TextView>(R.id.tvScore)
         val buttonResultat = findViewById<Button>(R.id.buttonResult)
+        val buttonClear = findViewById<Button>(R.id.clearHighscore)
         val greeting = findViewById<TextView>(R.id.greeting)
 
         val highScore = findViewById<RecyclerView>(R.id.highScore)
@@ -63,13 +64,11 @@ class ResultActivity : AppCompatActivity(), CoroutineScope {
         saveScore(number)
         highScore.adapter = highScoreAdapter
 
+     //   val numbers = listOf("one", "two", "three", "four")
 
-      /*  highScoreAdapter = Adapter(Activity(), highScoreList)
-        highScore.adapter = highScoreAdapter
-       // loadAllScores()
+     //   val sortedNumbers = numbers.sortedBy { it.length }
+      //  println("Sorted by length ascending: $sortedNumbers")
 
-
-       */
 
         launch {
             val scoreList = loadAllScores().await()
@@ -87,6 +86,12 @@ class ResultActivity : AppCompatActivity(), CoroutineScope {
         }else if(correctAnswers <=1) {
             greeting.text = "Du får nog plugga på lite mer!"
         }
+
+       /* buttonClear.setOnClickListener{
+             deleteHighScore()
+        }
+
+        */
 
         buttonResultat.setOnClickListener{
             startActivity(Intent(this, MainActivity::class.java))
@@ -111,5 +116,11 @@ class ResultActivity : AppCompatActivity(), CoroutineScope {
         db.HighScoreDao().getAll()
 
     }
+    /*fun deleteHighScore(highScore : HighScore) =
+        launch(Dispatchers.IO) {
+            db.HighScoreDao().delete(highScore)
+        }
+
+     */
 
 }

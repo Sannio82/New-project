@@ -29,9 +29,10 @@ class Adapter (val context: Context, val highScoreList: List<HighScore>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         // när en list_view ska visas så tar vi rätt person från vår lista
         val highScore = highScoreList[position]
+
+        //fun CharArray.sorted(): List<Char>
 
         // sätter vi in den personens uppgifter i vår view
         holder.userName.text = highScore.name
