@@ -27,11 +27,13 @@ class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
     lateinit var option2 : TextView
     lateinit var option3 : TextView
     lateinit var option4 : TextView
+    var userName: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_geography2)
 
+        userName = intent.getStringExtra("name")
 
         option1 = findViewById<TextView>(R.id.option1)
         option2 = findViewById<TextView>(R.id.option2)
@@ -196,8 +198,9 @@ class ScienceActivity2 : AppCompatActivity(), View.OnClickListener {
         val intent = Intent(this, ResultActivity::class.java)
         intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
         intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
-        startActivity(intent)
-        finish()
+            intent.putExtra("name", userName)
+            startActivity(intent)
+            finish()
     }
 }
 
